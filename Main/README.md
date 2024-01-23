@@ -3,7 +3,7 @@
 ## Description
 
 The application is called Employee Tracker and keeps track of employees names, roles, departments, salaries, and managers.
-Thge user can add or remove employees, and change their department, role or manager. 
+The user can add or remove employees, and change their department, role or manager. 
 The program employs Node.js, Inquirer and My SQL to function.
 
 ## Visuals
