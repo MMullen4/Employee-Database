@@ -84,7 +84,7 @@ function loadMainPrompts() {
     }
   ]).then(res => {
     let choice = res.choice;
-    // Call the appropriate function depending on what the user chose
+    // Call the appropriate function depending on selection
     switch (choice) {
       case "VIEW_EMPLOYEES":
         viewEmployees();
@@ -135,7 +135,7 @@ function loadMainPrompts() {
   )
 }
 
-// View all employees
+// Async function to View all employees
 async function viewEmployees() {
   const [rows] = await db.findAllEmployees()
   console.table(rows)
