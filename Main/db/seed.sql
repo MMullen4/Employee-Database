@@ -18,10 +18,11 @@ VALUES
     ('Salesperson', 80000, 1),
     ('Lead Engineer', 150000, 2),
     ('Software Engineer', 120000, 2),
-    ('Customer Service', 160000, 3),
-    ('Accountant', 125000, 3),
-    ('Legal Team Lead', 250000, 4),
-    ('Lawyer', 190000, 4);
+    ('Fulfillment',5),
+    ('Customer Service', 160000, 6),
+    ('Accountant', 125000, 4),
+    ('Legal Team Lead', 250000, 7),
+    ('Lawyer', 190000, 7);
 
 INSERT INTO employee
     (first_name, last_name, role_id, manager_id)

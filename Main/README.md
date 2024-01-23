@@ -3,7 +3,7 @@ Description
 The application is called Employee Tracker and keeps track of employees names, roles, departments, salaries, and managers. The user can add or remove employees, and change their department, role or manager. User picks the options by using the arrow keys.  The program employs Node.js, Inquirer and My SQL to function through the command-line.
 
 ## Visuals
-
+https://app.screencastify.com/v3/watch/8VWJ7q2cctbH3bNuRtVw
 
 ## Installation
 User must install npm i inquirer@8.2.4 to function through the command line.
