@@ -242,7 +242,7 @@ async function updateEmployeeRole() {
     value: id
   }));
 
-  const [roles = rows] = await db.findAllEmployees()
+  const [roles = rows] = await db.findAllRoles()
   const roleChoices = roles.map(({ id, title }) => ({
     name: title,
     value: id
@@ -371,7 +371,7 @@ async function addRole() {
     name: name,
     value: id
   }));
-  const { title, salary, departmentId } = await prompt([
+  const { title, salary, department_id } = await prompt([
     {
       name: "title",
       message: "What is the name of the role?"
@@ -387,7 +387,7 @@ async function addRole() {
       choices: departmentChoices
     }
   ])
-  const create = await db.createRole({title,salary,departmentId})
+  const create = await db.createRole({title,salary,department_id})
     console.log(`Added ${title} to the database`)
     loadMainPrompts()
 
