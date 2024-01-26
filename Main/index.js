@@ -248,7 +248,7 @@ async function updateEmployeeRole() {
     value: id
   }));
   //  console.log({employees,roles})
-  const { employeeId, roleId } = await prompt([
+  const { employeeId, roleId } = await prompt([  // destructuring; waiting for employeeId and roleId
     {
       type: "list",
       name: "employeeId",
@@ -261,7 +261,7 @@ async function updateEmployeeRole() {
       choices: roleChoices
     }
   ])
-  const update = await db.updateEmployeeRole(employeeId, roleId)
+  const update = await db.updateEmployeeRole(employeeId, roleId) // handing off answers to db
   console.log("Updated employee's role")
   loadMainPrompts() // restarts menu 
 
