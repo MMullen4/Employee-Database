@@ -448,15 +448,18 @@ function removeRole() {
         })
     }
 
-// View all deparments
-function viewDepartments() {
-      db.findAllDepartments()
-        .then(([rows]) => {
-          let departments = rows;
-          console.log("\n");
-          console.table(departments);
-        })
-        .then(() => loadMainPrompts());
+// async function View all deparments
+async function viewDepartments() {
+  const [rows] = await db.findAllDepartments()
+  console.table(rows);
+  loadMainPrompts()
+      // db.findAllDepartments()
+      //   .then(([rows]) => {
+      //     let departments = rows;
+      //     // console.log("\n");
+      //     console.table(rows);
+      //   })
+      //   .then(() => loadMainPrompts());
     }
 
 // Add a department
@@ -498,15 +501,18 @@ function removeDepartment() {
         })
     }
 
-// View all departments and show their total utilized department budget
-function viewUtilizedBudgetByDepartment() {
-      db.viewDepartmentBudgets()
-        .then(([rows]) => {
-          let departments = rows;
-          console.log("\n");
-          console.table(departments);
-        })
-        .then(() => loadMainPrompts());
+// async View all departments and show their total utilized department budget
+async function viewUtilizedBudgetByDepartment() {
+  const [rows] = await db.viewDepartmentBudgets()
+  console.table(rows)
+  loadMainPrompts()
+      // db.viewDepartmentBudgets()
+      //   .then(([rows]) => {
+      //     let departments = rows;
+      //     console.log("\n");
+      //     console.table(departments);
+      //   })
+      //   .then(() => loadMainPrompts());
     }
 
 // Add an employee
