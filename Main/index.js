@@ -140,13 +140,6 @@ async function viewEmployees() {
   const [rows] = await db.findAllEmployees()
   console.table(rows)
   loadMainPrompts()
-  // db.findAllEmployees()
-  //   .then(([rows]) => {
-  //     let employees = rows;
-  //     console.log("\n");
-  //     console.table(employees);
-  //   })
-  //   .then(() => loadMainPrompts());
 }
 
 // View all employees that belong to a department
@@ -236,7 +229,6 @@ function removeEmployee() {
 // Update an employee's role
 async function updateEmployeeRole() {
   const [employees = rows] = await db.findAllEmployees()
-  // let employees = rows;
   const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
     name: `${first_name} ${last_name}`,
     value: id
@@ -247,7 +239,6 @@ async function updateEmployeeRole() {
     name: title,
     value: id
   }));
-  //  console.log({employees,roles})
   const { employeeId, roleId } = await prompt([  // destructuring; waiting for employeeId and roleId
     {
       type: "list",
@@ -264,47 +255,6 @@ async function updateEmployeeRole() {
   const update = await db.updateEmployeeRole(employeeId, roleId) // handing off answers to db
   console.log("Updated employee's role")
   loadMainPrompts() // restarts menu 
-
-  // db.findAllEmployees()
-  //   .then(([rows]) => {
-  //     let employees = rows;
-  //     const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
-  //       name: `${first_name} ${last_name}`,
-  //       value: id
-  //     }));
-
-  //     prompt([
-  //       {
-  //         type: "list",
-  //         name: "employeeId",
-  //         message: "Which employee's role do you want to update?",
-  //         choices: employeeChoices
-  //       }
-  //     ])
-  //       .then(res => {
-  //         let employeeId = res.employeeId;
-  //         db.findAllRoles()
-  //           .then(([rows]) => {
-  //             let roles = rows;
-  //             const roleChoices = roles.map(({ id, title }) => ({
-  //               name: title,
-  //               value: id
-  //             }));
-
-  //             prompt([
-  //               {
-  //                 type: "list",
-  //                 name: "roleId",
-  //                 message: "Which role do you want to assign the selected employee?",
-  //                 choices: roleChoices
-  //               }
-  //             ])
-  //               .then(res => db.updateEmployeeRole(employeeId, res.roleId))
-  //               .then(() => console.log("Updated employee's role"))
-  //               .then(() => loadMainPrompts())  // restarts menu 
-  //           });
-  //       });
-  //   })
 }
 
 // Update an employee's manager
@@ -390,37 +340,6 @@ async function addRole() {
       const create = await db.createRole({ title, salary, department_id })
       console.log(`Added ${title} to the database`)
       loadMainPrompts()
-
-      // db.findAllDepartments()
-      //   .then(([rows]) => {
-      //     let departments = rows;
-      //     const departmentChoices = departments.map(({ id, name }) => ({
-      //       name: name,
-      //       value: id
-      //     }));
-
-      //     prompt([
-      //       {
-      //         name: "title",
-      //         message: "What is the name of the role?"
-      //       },
-      //       {
-      //         name: "salary",
-      //         message: "What is the salary of the role?"
-      //       },
-      //       {
-      //         type: "list",
-      //         name: "department_id",
-      //         message: "Which department does the role belong to?",
-      //         choices: departmentChoices
-      //       }
-      //     ])
-      //       .then(role => {
-      //         db.createRole(role)
-      //           .then(() => console.log(`Added ${role.title} to the database`))
-      //           .then(() => loadMainPrompts())
-      //       })
-      //   })
     }
 
 // Delete a role
