@@ -5,6 +5,8 @@ The application is called Employee Tracker and keeps track of employees names, r
 ## Visuals
 https://app.screencastify.com/v3/watch/8VWJ7q2cctbH3bNuRtVw
 
+![Screenshot 2024-01-29 at 10 58 30 PM](https://github.com/MMullen4/Employee-Database/assets/142930268/3d7ac311-6fe5-4f32-b805-5f0a93f5b177)
+
 ## Installation
 User must install npm i inquirer@8.2.4 to function through the command line.
 
